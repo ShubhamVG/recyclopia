@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
+import '../screens/profile_screen.dart';
 import '../screens/recycle_center_screen.dart';
 import '../screens/reward_screen.dart';
 
@@ -32,6 +33,10 @@ class MyBottomNavbar extends StatelessWidget {
           case 2:
             Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const RewardScreen()),
+            );
+          case 3:
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const ProfileScreen()),
             );
           default:
             return;
