@@ -49,7 +49,7 @@ class MyBottomNavbar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.factory_rounded),
-          label: 'Recycle Centers',
+          label: 'Recycle',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.currency_exchange_rounded),
