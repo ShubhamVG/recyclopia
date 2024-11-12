@@ -128,26 +128,75 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: separationHeight),
 
               // Recent Activities
-              const Text(
-                'Recent Activities',
-                style: TextStyle(
-                  fontSize: headerTextSize,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                children: [
+                  Text(
+                    'Recent Activities',
+                    style: TextStyle(
+                      fontSize: headerTextSize,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () => showDialog(
+                      context: context,
+                      builder: (_) => _ItemsPointsModal(),
+                    ),
+                    icon: CircleAvatar(
+                      radius: 15.0,
+                      child: Icon(Icons.question_mark_rounded),
+                    ),
+                  ),
+                ],
               ),
 
               for (final (material, point) in recentActivities)
-                ListTile(
-                  leading: const Icon(
-                    Icons.recycling_rounded,
-                    color: Colors.green,
-                  ),
-                  title: Text(material),
-                  trailing: Text(
-                    '$point Points',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                Column(
+                  children: [
+                    ListTile(
+                      leading: const Icon(
+                        Icons.recycling_rounded,
+                        color: Colors.green,
+                      ),
+                      title: Text(material),
+                      trailing: Text(
+                        '$point Points',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Divider(),
+                  ],
                 ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ItemsPointsModal extends StatelessWidget {
+  const _ItemsPointsModal();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Card(
+        elevation: 10.0,
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Recyclable to points conversion\n',
+                style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+              ),
+              Text('Plastic Bottles = 5 points'),
+              Text('Packaging cardboard = 10 points'),
+              Text('Plastic cups = 3 points'),
+              Text('Wooden planks = 6 points'),
             ],
           ),
         ),
