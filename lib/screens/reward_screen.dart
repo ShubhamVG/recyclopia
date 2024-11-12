@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils.dart';
 import '../widgets/my_bottom_navbar.dart';
 import 'redeem_history_screen.dart';
 
@@ -30,8 +31,11 @@ class RewardScreen extends StatelessWidget {
                     );
                   },
                   child: ListTile(
-                    leading: CircleAvatar(child: Icon(Icons.history_rounded)),
-                    title: Text('Rewards History'),
+                    leading: CircleAvatar(
+                      backgroundColor: extraLight,
+                      child: Icon(Icons.history_rounded),
+                    ),
+                    title: Text('Redeemed Items History'),
                     subtitle: Text(
                       'Find redeemed items & past transactions here',
                     ),
@@ -57,56 +61,27 @@ class RewardScreen extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: [
-                    Padding(
+                  children: <(IconData, String)>[
+                    (Icons.house_rounded, 'Household'),
+                    (Icons.checkroom_rounded, 'Clothing'),
+                    (Icons.smartphone_rounded, 'Technology'),
+                  ].map((e) {
+                    return Padding(
                       padding: const EdgeInsets.only(left: 15.0),
                       child: OutlinedButton(
                         onPressed: () {},
                         style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.all(30.0),
+                          iconColor: Colors.black54,
+                          foregroundColor: Colors.black,
+                          padding: const EdgeInsets.all(15.0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        child: const Row(children: [
-                          Icon(Icons.house_rounded),
-                          Text('Household'),
-                        ]),
+                        child: Row(children: [Icon(e.$1), Text(e.$2)]),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.all(30.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        child: const Row(children: [
-                          Icon(Icons.checkroom_rounded),
-                          Text('Clothing'),
-                        ]),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.all(30.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        child: const Row(children: [
-                          Icon(Icons.smartphone_rounded),
-                          Text('Technology'),
-                        ]),
-                      ),
-                    ),
-                  ],
+                    );
+                  }).toList(growable: false),
                 ), // Products
               ),
               const SizedBox(height: separationHeight / 2),
@@ -151,6 +126,10 @@ class RewardScreen extends StatelessWidget {
                   constraints: const BoxConstraints(minWidth: double.infinity),
                   child: OutlinedButton(
                     onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: darkGreen,
+                      side: BorderSide(color: darkGreen),
+                    ),
                     child: const Text('Reedem as Cash'),
                   ),
                 ),

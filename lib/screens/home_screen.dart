@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
+import '../utils.dart';
 import '../widgets/my_bottom_navbar.dart';
 import 'recycle_center_screen.dart';
 import 'scan_screen.dart';
@@ -43,6 +46,7 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => RecycleCenterScreen()),
                 );
               },
+              style: FilledButton.styleFrom(backgroundColor: lightGreen),
               child: const Text('Find recycle center'),
             ),
           ),
@@ -54,6 +58,7 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => ScanScreen()),
               );
             },
+            backgroundColor: extraLight,
             child: const Icon(Icons.qr_code_2_rounded),
           ),
         ],
@@ -65,10 +70,12 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Welcome John Doe
-              const Row(
+              Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircleAvatar(child: Icon(Icons.person_outline_rounded)),
+                  CircleAvatar(
+                    backgroundImage: FileImage(File('assets/person.jpg')),
+                  ),
                   SizedBox(width: 20.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,8 +150,12 @@ class HomeScreen extends StatelessWidget {
                       builder: (_) => _ItemsPointsModal(),
                     ),
                     icon: CircleAvatar(
+                      backgroundColor: lightGreen,
                       radius: 15.0,
-                      child: Icon(Icons.question_mark_rounded),
+                      child: Icon(
+                        Icons.question_mark_rounded,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

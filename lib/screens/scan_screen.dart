@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils.dart';
+
 // import '../widgets/my_bottom_navbar.dart';
 
 class ScanScreen extends StatefulWidget {
@@ -86,7 +88,6 @@ class _ScanScreenState extends State<ScanScreen> {
                     ),
                   ],
                 ),
-                Divider(),
                 const SizedBox(height: separationHeight),
 
                 // Manual Entry Option
@@ -130,6 +131,7 @@ class _ScanScreenState extends State<ScanScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
+                      backgroundColor: lightGreen,
                     ),
                     onPressed: () {},
                     child: Padding(

@@ -4,6 +4,7 @@ import '../screens/home_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/recycle_center_screen.dart';
 import '../screens/reward_screen.dart';
+import '../utils.dart';
 
 class MyBottomNavbar extends StatelessWidget {
   const MyBottomNavbar({super.key, required this.selectedIndex});
@@ -13,6 +14,8 @@ class MyBottomNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      selectedItemColor: lightGreen,
+      // unselectedItemColor: darkGreen,
       currentIndex: selectedIndex,
       onTap: (value) {
         if (value == selectedIndex) return;

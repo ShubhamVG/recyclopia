@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils.dart';
 import '../widgets/my_bottom_navbar.dart';
 import 'scan_screen.dart';
 
@@ -34,6 +35,7 @@ class RecycleCenterScreen extends StatelessWidget {
                   width: double.infinity,
                   child: FilledButton(
                     onPressed: () {},
+                    style: FilledButton.styleFrom(backgroundColor: lightGreen),
                     child: const Text('Search Nearby Centers'),
                   ),
                 ),
@@ -132,6 +134,7 @@ class RecycleCenterScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => ScanScreen()),
                       );
                     },
+                    style: FilledButton.styleFrom(backgroundColor: lightGreen),
                     child: const Text('Scan QR Code of Dispose Machine'),
                   ),
                 ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../widgets/my_bottom_navbar.dart';
@@ -17,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('User Profile')),
       bottomNavigationBar: const MyBottomNavbar(selectedIndex: 3),
-      body: const SafeArea(
+      body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
           child: SingleChildScrollView(
@@ -28,7 +30,9 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CircleAvatar(child: Icon(Icons.person_outline_rounded)),
+                    CircleAvatar(
+                      backgroundImage: FileImage(File('assets/person.jpg')),
+                    ),
                     SizedBox(width: 20.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,19 +66,25 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.notifications_rounded),
+                  leading: Icon(
+                    Icons.notifications_rounded,
+                    color: Colors.amber[800],
+                  ),
                   title: Text('Notifications'),
                   subtitle: Text('on'),
                 ),
                 Divider(height: 5.0),
                 ListTile(
-                  leading: Icon(Icons.privacy_tip_rounded),
+                  leading: Icon(Icons.privacy_tip_rounded, color: Colors.teal),
                   title: Text('Profile visibility'),
                   subtitle: Text('Public'),
                 ),
                 Divider(height: 5.0),
                 ListTile(
-                  leading: Icon(Icons.settings_accessibility_rounded),
+                  leading: Icon(
+                    Icons.settings_accessibility_rounded,
+                    color: Colors.blueGrey,
+                  ),
                   title: Text('Accessibility'),
                   subtitle: Text('Default'),
                 ),
