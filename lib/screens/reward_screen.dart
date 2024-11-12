@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/my_bottom_navbar.dart';
+import 'redeem_history_screen.dart';
 
 class RewardScreen extends StatelessWidget {
   const RewardScreen({super.key});
@@ -19,13 +20,21 @@ class RewardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Reward history
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-                child: ListTile(
-                  leading: CircleAvatar(child: Icon(Icons.history_rounded)),
-                  title: Text('Rewards History'),
-                  subtitle: Text(
-                    'Find redeemed items & past transactions here',
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => RedeemHistoryScreen()),
+                    );
+                  },
+                  child: ListTile(
+                    leading: CircleAvatar(child: Icon(Icons.history_rounded)),
+                    title: Text('Rewards History'),
+                    subtitle: Text(
+                      'Find redeemed items & past transactions here',
+                    ),
                   ),
                 ),
               ),
