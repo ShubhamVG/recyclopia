@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/my_bottom_navbar.dart';
+import 'recycle_center_screen.dart';
+import 'scan_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,13 +36,24 @@ class HomeScreen extends StatelessWidget {
               minHeight: 50.0,
             ),
             child: FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => RecycleCenterScreen()),
+                );
+              },
               child: const Text('Find recycle center'),
             ),
           ),
           const SizedBox(width: 10.0),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ScanScreen()),
+              );
+            },
             child: const Icon(Icons.qr_code_2_rounded),
           ),
         ],

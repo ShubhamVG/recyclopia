@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/my_bottom_navbar.dart';
+import 'scan_screen.dart';
 
 class RecycleCenterScreen extends StatelessWidget {
   const RecycleCenterScreen({super.key});
@@ -114,7 +115,7 @@ class RecycleCenterScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -125,7 +126,12 @@ class RecycleCenterScreen extends StatelessWidget {
                 ConstrainedBox(
                   constraints: const BoxConstraints(minWidth: double.infinity),
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => ScanScreen()),
+                      );
+                    },
                     child: const Text('Scan QR Code of Dispose Machine'),
                   ),
                 ),
