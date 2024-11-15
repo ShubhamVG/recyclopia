@@ -87,31 +87,34 @@ class RewardScreen extends StatelessWidget {
               const SizedBox(height: separationHeight / 2),
 
               // Categories items
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 15.0),
                       child: _ProductItem(
+                        image: Image.asset('assets/mason.jpg'),
                         category: 'Household',
-                        productName: 'Idk man',
+                        productName: 'Mason Jar',
+                        points: 150,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15.0),
+                      child: _ProductItem(
+                        image: Image.asset('assets/denim.png'),
+                        category: 'Clothing',
+                        productName: 'Denim Jacket',
                         points: 200,
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 15.0),
                       child: _ProductItem(
-                        category: 'Household',
-                        productName: 'Idk man',
-                        points: 200,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15.0),
-                      child: _ProductItem(
-                        category: 'Household',
-                        productName: 'Idk man',
+                        image: Image.asset('assets/watch.png'),
+                        category: 'Technology',
+                        productName: 'Digital Fitness watch',
                         points: 200,
                       ),
                     ),
@@ -144,11 +147,13 @@ class RewardScreen extends StatelessWidget {
 
 class _ProductItem extends StatelessWidget {
   const _ProductItem({
+    required this.image,
     required this.category,
     required this.productName,
     required this.points,
   });
 
+  final Image image;
   final String category;
   final String productName;
   final int points;
@@ -160,14 +165,10 @@ class _ProductItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 5.0),
+            padding: const EdgeInsets.only(left: 5.0, top: 2.0),
             child: Text(category),
           ),
-          Container(
-            width: 150,
-            height: 150,
-            color: Colors.red,
-          ),
+          SizedBox(width: 150, height: 150, child: image),
           Padding(
             padding: const EdgeInsets.only(left: 5.0),
             child: Column(

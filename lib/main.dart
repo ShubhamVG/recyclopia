@@ -6,6 +6,8 @@ import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   final prefs = await SharedPreferences.getInstance();
   final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
@@ -27,16 +29,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: kDebugMode,
-      theme: ThemeData(
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedItemColor: Colors.purple,
-          unselectedItemColor: Colors.black,
-          unselectedLabelStyle: TextStyle(color: Colors.black),
-          showUnselectedLabels: true,
-        ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: toLogin ? LoginScreen(prefs: prefs) : const HomeScreen(),
     );
   }

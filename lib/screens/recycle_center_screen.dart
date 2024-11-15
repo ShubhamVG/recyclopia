@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../utils.dart';
@@ -28,7 +30,10 @@ class RecycleCenterScreen extends StatelessWidget {
                 SizedBox(
                   height: size.height / 3.5,
                   width: double.infinity,
-                  child: const Card.filled(color: Colors.green),
+                  child: Card.filled(
+                    color: Colors.green,
+                    child: Image.asset('assets/map.jpg', fit: BoxFit.fill),
+                  ),
                 ),
                 const SizedBox(height: 10.0),
                 SizedBox(
@@ -65,6 +70,7 @@ class RecycleCenterScreen extends StatelessWidget {
                         ),
                         height: 80.0,
                         width: 80.0,
+                        child: Image.asset('assets/4r.jpg'),
                       ),
                       const SizedBox(width: 10.0),
                       Column(
@@ -101,6 +107,7 @@ class RecycleCenterScreen extends StatelessWidget {
                         ),
                         height: 80.0,
                         width: 80.0,
+                        child: Image.asset('assets/Jute_Reusable.jpg'),
                       ),
                       const SizedBox(width: 10.0),
                       Column(

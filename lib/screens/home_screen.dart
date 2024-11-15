@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import '../utils.dart';
@@ -20,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     const points = 550;
     const recentActivities = [
       ('Plastic', 5),
-      ('Glass', 10),
+      ('Packaging Cardboard', 6),
       ('Paper', 3),
     ];
 
@@ -74,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CircleAvatar(
-                    backgroundImage: FileImage(File('assets/person.jpg')),
+                    backgroundImage: AssetImage('assets/person.jpg'),
                   ),
                   SizedBox(width: 20.0),
                   Column(

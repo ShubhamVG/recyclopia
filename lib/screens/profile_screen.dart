@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import '../widgets/my_bottom_navbar.dart';
@@ -31,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     CircleAvatar(
-                      backgroundImage: FileImage(File('assets/person.jpg')),
+                      backgroundImage: AssetImage('assets/person.jpg'),
                     ),
                     SizedBox(width: 20.0),
                     Column(
