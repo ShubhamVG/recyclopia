@@ -101,50 +101,50 @@ class RedeemHistoryScreen extends StatelessWidget {
   }
 }
 
-class _ProductItem extends StatelessWidget {
-  const _ProductItem({
-    required this.category,
-    required this.productName,
-    required this.points,
-  });
+// class _ProductItem extends StatelessWidget {
+//   const _ProductItem({
+//     required this.category,
+//     required this.productName,
+//     required this.points,
+//   });
 
-  final String category;
-  final String productName;
-  final int points;
+//   final String category;
+//   final String productName;
+//   final int points;
 
-  @override
-  Widget build(BuildContext context) {
-    return Card.outlined(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 5.0),
-            child: Text(category),
-          ),
-          Container(
-            width: 150,
-            height: 150,
-            color: Colors.red,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(productName, style: const TextStyle(fontSize: 13.0)),
-                Text(
-                  '$points Points',
-                  style: const TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card.outlined(
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Padding(
+//             padding: const EdgeInsets.only(left: 5.0),
+//             child: Text(category),
+//           ),
+//           Container(
+//             width: 150,
+//             height: 150,
+//             color: Colors.red,
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.only(left: 5.0),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(productName, style: const TextStyle(fontSize: 13.0)),
+//                 Text(
+//                   '$points Points',
+//                   style: const TextStyle(
+//                     fontSize: 17.0,
+//                     fontWeight: FontWeight.w600,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }

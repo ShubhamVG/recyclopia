@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
     const headerTextSize = 20.0;
 
     // Dummy variables
-    const name = 'John Doe';
+    const name = 'John';
     const points = 550;
     const recentActivities = [
       ('Plastic', 5),
